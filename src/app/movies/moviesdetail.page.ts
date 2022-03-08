@@ -15,40 +15,7 @@ import { MoviesService } from './movies.service';
         padding: 20px;
       }
     </style>
-    <!--
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image">
-        <img
-        mat-card-image
-        src= "http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}"
-      />
-        </div>
-        <mat-card-title>{{ movie.title }}</mat-card-title>
-        <mat-card-subtitle>{{ movie.release_date }}</mat-card-subtitle>
-      </mat-card-header>
-      <img
-        mat-card-image
-        src= "http://image.tmdb.org/t/p/w500{{movie.poster_path}}"
-      />
-      <mat-card-content>
-        <p>
-          {{ movie.overview }}
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button (click)="favToggle()" mat-button>
-          <mat-icon
-            color="accent"
-            aria-hidden="false"
-            aria-label="Example home icon"
-            >favorite_border</mat-icon
-          >Mi piace
-        </button>
-        aggiungi pulsante cuore pieno al click
-      </mat-card-actions>
-      <ng-content></ng-content>
-    </mat-card> -->
+
 
     <ng-container *ngIf="movie; else elseTemplate">
       <div class="movies-container">
@@ -85,9 +52,6 @@ export class MoviesdetailPage implements OnInit {
       const id = +params['id'];
       this.movie = await this.movieSrv.getMovie(id).toPromise();
     });
-
-    //const getMovies = await this.movieSrv.getMovie(id).toPromise();
-    //this.movie = getMovies;
   }
 
   favToggle() {
