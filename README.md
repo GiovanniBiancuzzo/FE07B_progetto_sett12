@@ -3,6 +3,6 @@ progetto settimana 12 su vetrina film
 
 strumenti e librerie utilizzati: material angular e angular-jwt
 
-funzionanti: registrazione, login, routing, tokenizzazione elenco film, dettaglio film
+funzionanti: registrazione, login, logout, routing, tokenizzazione, elenco film, dettaglio film
 
 non funzionanti o non ancora implementati: preferiti, aggiunta preferiti, pagina profilo, newsletter e supporto
