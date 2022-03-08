@@ -1,0 +1,21 @@
+<form #form="ngForm" (ngSubmit)="onLogin(form)">
+  <mat-form-field appearance="fill">
+    <mat-label for="email">Email</mat-label>
+    <input matInput placeholder="email@example.com" name="email" required ngModel id="email" type="email" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label for="pass">Password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" name="password" required ngModel id="pass" type="password" />
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide">
+      <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" type="submit" [disabled]="form.invalid" class="btn btn-primary mt-4">
+    Accedi
+  </button>
+</form>
+
+<a [routerLink]="['/signup']">Non sei ancora registrato?</a>

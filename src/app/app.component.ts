@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <app-navbar></app-navbar>
+  `,
+  styles: [],
 })
 export class AppComponent {
-  title = 'FE07B_progetto_sett12';
+  title = 'Angular Video';
 }

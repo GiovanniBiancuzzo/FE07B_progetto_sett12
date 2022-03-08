@@ -1,0 +1,42 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" >
+
+  <mat-toolbar color="primary" class="example-toolbar">
+    <!-- titolo toolbar -->
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name" [routerLink]="['/movies']"><mat-icon color="accent" aria-hidden="false" aria-label="Example movie_creation icon">movie_creation</mat-icon>&nbsp; Angular Video</h1>
+
+    <!-- funzioni extra di supporto e newsletter, attualmente inutilizzate -->
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>inbox</mat-icon>
+        <span>Newsletter</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>support</mat-icon>
+        <span>Supporto</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+
+  <!-- navbar laterale -->
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <mat-nav-list >
+          <a mat-list-item [routerLink]="['/movies']"><mat-icon color="accent" aria-hidden="false" aria-label="Example movie_creation icon">movie_creation</mat-icon>&nbsp; Film</a>
+          <a mat-list-item [routerLink]="['/profile']"><mat-icon color="accent" aria-hidden="false" aria-label="Example profile icon">account_circle</mat-icon>&nbsp; Profilo</a>
+          <a mat-list-item [routerLink]="['/favourites']"><mat-icon color="accent" aria-hidden="false" aria-label="Example loyalty icon">loyalty</mat-icon>&nbsp; Preferiti</a>
+          <button (click)="onLogout()" mat-button ><mat-icon color="accent" aria-hidden="false" aria-label="Example logout icon">logout</mat-icon>&nbsp; Logout</button>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
