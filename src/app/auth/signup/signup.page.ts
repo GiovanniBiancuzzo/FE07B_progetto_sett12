@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NavigationService } from '../../navigation.service';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -14,8 +13,7 @@ export class SignupPage implements OnInit {
   isLoggedIn = false;
   constructor(
     private authSrv: AuthService,
-    private router: Router,
-    private navService: NavigationService
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -31,9 +29,5 @@ export class SignupPage implements OnInit {
       form.reset();
       this.isLoading = false;
     }
-  }
-
-  goToLogin() {
-    this.navService.toLogin();
   }
 }

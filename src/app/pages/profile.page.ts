@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../models/user';
-import { UserService } from '../user.service';
 import { NavigationService } from '../navigation.service';
 
 @Component({
